@@ -31,5 +31,8 @@ def action():
     else:
         sys.exit()
 
-login()
-action()
+def getDID():
+    data = Client.get_profile(actor=["Okttenda.bsky.social"])
+    did = data.did
+    displayName = data.display_name
+    return did, displayName
